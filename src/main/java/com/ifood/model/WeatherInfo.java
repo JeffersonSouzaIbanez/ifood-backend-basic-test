@@ -1,70 +1,79 @@
 package com.ifood.model;
- import java.util.Arrays;
- import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
- @JsonIgnoreProperties(ignoreUnknown = true)
+
+import java.util.Arrays;
+
+import com.google.gson.annotations.SerializedName;
+
 public class WeatherInfo {
-	private Weather[] weather;
-	private Main main;
+
+	@SerializedName("weather")
+	private CurrentWeather[] currentWeather;
+	@SerializedName("main")
+	private WeatherProperties weatherProperties;
 	private long visibility;
 	private Wind wind;
-	private Clouds clouds;
-	private long dt;
+	@SerializedName("dt")
+	private long epochTime;
 	private String name;
 
-	public Weather[] getWeather() {
-		return weather;
+	public CurrentWeather[] getCurrentWeather() {
+		return currentWeather;
 	}
-	public void setWeather(Weather[] weather) {
-		this.weather = weather;
+
+	public void setCurrentWeather(CurrentWeather[] weather) {
+		this.currentWeather = weather;
 	}
-	public Main getMain() {
-		return main;
+
+	public WeatherProperties getWeatherProperties() {
+		return weatherProperties;
 	}
-	public void setMain(Main main) {
-		this.main = main;
+
+	public void setWeatherProperties(WeatherProperties weatherProperties) {
+		this.weatherProperties = weatherProperties;
 	}
+
 	public long getVisibility() {
 		return visibility;
 	}
+
 	public void setVisibility(long visibility) {
 		this.visibility = visibility;
 	}
+
 	public Wind getWind() {
 		return wind;
 	}
+
 	public void setWind(Wind wind) {
 		this.wind = wind;
 	}
-	public Clouds getClouds() {
-		return clouds;
+
+	public long getEpochTime() {
+		return epochTime;
 	}
-	public void setClouds(Clouds clouds) {
-		this.clouds = clouds;
+
+	public void setEpochTime(long epochTime) {
+		this.epochTime = epochTime;
 	}
-	public long getDt() {
-		return dt;
-	}
-	public void setDt(long dt) {
-		this.dt = dt;
-	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("WeatherInfo [weather=").append(Arrays.toString(weather));
-		builder.append(", main=").append(main);
+		builder.append("WeatherInfo [currentWeather=").append(Arrays.toString(currentWeather));
+		builder.append(", weatherProperties=").append(weatherProperties);
 		builder.append(", visibility=").append(visibility);
 		builder.append(", wind=").append(wind);
-		builder.append(", clouds=").append(clouds);
-		builder.append(", dt=").append(dt);
+		builder.append(", epochTime=").append(epochTime);
 		builder.append(", name=").append(name);
 		builder.append("]");
 		return builder.toString();
 	}
-	
- }
+}

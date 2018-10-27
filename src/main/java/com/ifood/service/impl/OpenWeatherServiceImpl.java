@@ -1,11 +1,11 @@
-package com.ifood.model.impl;
+package com.ifood.service.impl;
 
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.ifood.client.OpenWeatherClient;
-import com.ifood.model.OpenWeatherService;
 import com.ifood.model.WeatherInfo;
+import com.ifood.service.OpenWeatherService;
 
 import feign.Feign;
 import feign.Logger;
@@ -15,9 +15,6 @@ import feign.slf4j.Slf4jLogger;
 
 @Service
 public class OpenWeatherServiceImpl implements OpenWeatherService {
-
-	// @Autowired
-	// OpenWeatherClient openWeatherClient;
 
 	@Override
 	@Cacheable("cityWeather")
