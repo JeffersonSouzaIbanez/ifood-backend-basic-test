@@ -19,8 +19,11 @@ public class OpenWeatherServiceImpl implements OpenWeatherService {
 	@Override
 	@Cacheable("cityWeather")
 	public WeatherInfo getWeatherByCity(String cityName) {
-		OpenWeatherClient openWeatherClient = Feign.builder().encoder(new GsonEncoder()).decoder(new GsonDecoder())
-				.logger(new Slf4jLogger(OpenWeatherClient.class)).logLevel(Logger.Level.FULL)
+		OpenWeatherClient openWeatherClient = Feign.builder()
+				.encoder(new GsonEncoder())
+				.decoder(new GsonDecoder())
+				.logger(new Slf4jLogger(OpenWeatherClient.class))
+				.logLevel(Logger.Level.FULL)
 				.target(OpenWeatherClient.class, "http://api.openweathermap.org/data/2.5/");
 
 		return openWeatherClient.getWeatherInfo(cityName, "56b43c17bff04ff04ce4fc381bf540fe");

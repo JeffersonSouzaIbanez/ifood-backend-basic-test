@@ -1,8 +1,10 @@
 package com.ifood.model;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherProperties {
+public class WeatherProperties implements Serializable {
 	@SerializedName("temp")
 	private double temperature;
 	private long pressure;

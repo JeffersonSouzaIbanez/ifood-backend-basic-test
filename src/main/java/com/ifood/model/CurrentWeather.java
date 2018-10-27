@@ -1,8 +1,10 @@
 package com.ifood.model;
 
+import java.io.Serializable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class CurrentWeather {
+public class CurrentWeather implements Serializable {
 	@SerializedName("main")
 	private String weatherGroup;
 	private String description;
