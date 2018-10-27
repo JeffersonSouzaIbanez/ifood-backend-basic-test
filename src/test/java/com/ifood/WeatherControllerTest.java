@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilde
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.ifood.controllers.WeatherController;
-import com.ifood.model.Main;
+import com.ifood.model.TempInfo;
 import com.ifood.model.OpenWeatherService;
 import com.ifood.model.Weather;
 import com.ifood.model.WeatherInfo;
@@ -48,15 +48,15 @@ public class WeatherControllerTest {
 	private static WeatherInfo createMockWeatherInfo() {
 		WeatherInfo weatherInfo = new WeatherInfo();
 		Weather weather = new Weather();
-		weather.setMain("Clouds");
+		weather.setCurretnWeather("Clouds");
 		Weather[] weatherArray = new Weather[] { weather };
 		weatherInfo.setWeather(weatherArray);
-		Main main = new Main();
+		TempInfo main = new TempInfo();
 		main.setTemp(282.15);
 		main.setHumidity(81);
 		main.setTemp_min(280.15);
 		main.setTemp_max(283.15);
-		weatherInfo.setMain(main);
+		weatherInfo.setTempInfo(main);
 		Wind wind = new Wind();
 		wind.setSpeed(2.6);
 		wind.setDeg(340);

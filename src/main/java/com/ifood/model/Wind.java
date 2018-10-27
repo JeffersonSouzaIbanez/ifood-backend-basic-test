@@ -19,11 +19,14 @@ public class Wind {
 	public void setDeg(int deg) {
 		this.deg = deg;
 	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Wind [speed=").append(speed);
-		builder.append(", deg=").append(deg);
+		builder.append("Wind [speed=");
+		builder.append(speed);
+		builder.append(", deg=");
+		builder.append(deg);
 		builder.append("]");
 		return builder.toString();
 	}

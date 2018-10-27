@@ -1,23 +1,19 @@
 package com.ifood.model;
- import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
- @JsonIgnoreProperties(ignoreUnknown = true)
-public class Main {
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TempInfo {
 	private double temp;
-	private long pressure;
 	private int humidity;
 	private double temp_min;
 	private double temp_max;
- 	public double getTemp() {
+
+	public double getTemp() {
 		return temp;
 	}
 	public void setTemp(double temp) {
 		this.temp = temp;
-	}
-	public long getPressure() {
-		return pressure;
-	}
-	public void setPressure(long pressure) {
-		this.pressure = pressure;
 	}
 	public int getHumidity() {
 		return humidity;
@@ -40,11 +36,14 @@ public class Main {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Main [temp=").append(temp);
-		builder.append(", pressure=").append(pressure);
-		builder.append(", humidity=").append(humidity);
-		builder.append(", temp_min=").append(temp_min);
-		builder.append(", temp_max=").append(temp_max);
+		builder.append("TempInfo [temp=");
+		builder.append(temp);
+		builder.append(", humidity=");
+		builder.append(humidity);
+		builder.append(", temp_min=");
+		builder.append(temp_min);
+		builder.append(", temp_max=");
+		builder.append(temp_max);
 		builder.append("]");
 		return builder.toString();
 	}
