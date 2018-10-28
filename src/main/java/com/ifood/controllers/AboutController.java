@@ -7,13 +7,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * AboutController class
+ *
+ * @author Jefferson Ibanez
+ */
 @RestController
 @RequestMapping(path = "/about")
 public class AboutController {
 
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String get(){
-			return "{\"status\": \"Working\"}";
+    public String get() {
+        return "{\"status\": \"Working\"}";
     }
 }

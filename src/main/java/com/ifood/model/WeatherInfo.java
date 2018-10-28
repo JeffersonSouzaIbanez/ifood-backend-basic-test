@@ -5,76 +5,88 @@ import java.util.Arrays;
 
 import com.google.gson.annotations.SerializedName;
 
-public class WeatherInfo implements Serializable{
+/**
+ * WeatherInfo class
+ *
+ * @author Jefferson Ibanez
+ */
+public class WeatherInfo implements Serializable {
 
-	@SerializedName("weather")
-	private CurrentWeather[] currentWeather;
-	@SerializedName("main")
-	private WeatherProperties weatherProperties;
-	private long visibility;
-	private Wind wind;
-	@SerializedName("dt")
-	private long epochTime;
-	private String name;
+    private static final long serialVersionUID = 2170246717941323589L;
 
-	public CurrentWeather[] getCurrentWeather() {
-		return currentWeather;
-	}
+    @SerializedName("weather")
+    private CurrentWeather[] currentWeather;
 
-	public void setCurrentWeather(CurrentWeather[] weather) {
-		this.currentWeather = weather;
-	}
+    @SerializedName("main")
+    private WeatherProperties weatherProperties;
 
-	public WeatherProperties getWeatherProperties() {
-		return weatherProperties;
-	}
+    private long visibility;
 
-	public void setWeatherProperties(WeatherProperties weatherProperties) {
-		this.weatherProperties = weatherProperties;
-	}
+    private Wind wind;
 
-	public long getVisibility() {
-		return visibility;
-	}
+    @SerializedName("dt")
+    private long epochTime;
 
-	public void setVisibility(long visibility) {
-		this.visibility = visibility;
-	}
+    private String name;
 
-	public Wind getWind() {
-		return wind;
-	}
+    public CurrentWeather[] getCurrentWeather() {
+        return currentWeather;
+    }
 
-	public void setWind(Wind wind) {
-		this.wind = wind;
-	}
+    public void setCurrentWeather(CurrentWeather[] weather) {
+        this.currentWeather = weather;
+    }
 
-	public long getEpochTime() {
-		return epochTime;
-	}
+    public WeatherProperties getWeatherProperties() {
+        return weatherProperties;
+    }
 
-	public void setEpochTime(long epochTime) {
-		this.epochTime = epochTime;
-	}
+    public void setWeatherProperties(WeatherProperties weatherProperties) {
+        this.weatherProperties = weatherProperties;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public long getVisibility() {
+        return visibility;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setVisibility(long visibility) {
+        this.visibility = visibility;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("WeatherInfo [currentWeather=").append(Arrays.toString(currentWeather));
-		builder.append(", weatherProperties=").append(weatherProperties);
-		builder.append(", visibility=").append(visibility);
-		builder.append(", wind=").append(wind);
-		builder.append(", epochTime=").append(epochTime);
-		builder.append(", name=").append(name);
-		builder.append("]");
-		return builder.toString();
-	}
+    public Wind getWind() {
+        return wind;
+    }
+
+    public void setWind(Wind wind) {
+        this.wind = wind;
+    }
+
+    public long getEpochTime() {
+        return epochTime;
+    }
+
+    public void setEpochTime(long epochTime) {
+        this.epochTime = epochTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("WeatherInfo [currentWeather=").append(Arrays.toString(currentWeather));
+        builder.append(", weatherProperties=").append(weatherProperties);
+        builder.append(", visibility=").append(visibility);
+        builder.append(", wind=").append(wind);
+        builder.append(", epochTime=").append(epochTime);
+        builder.append(", name=").append(name);
+        builder.append("]");
+        return builder.toString();
+    }
 }
