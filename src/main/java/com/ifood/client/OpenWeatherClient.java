@@ -14,6 +14,6 @@ import feign.RequestLine;
  */
 @FeignClient(name = "weatherClient")
 public interface OpenWeatherClient {
-    @RequestLine("GET /weather?q={cityName}&APPID={appIdKey}")
-    WeatherInfo getWeatherInfo(@Param(value = "cityName") String cityName, @Param(value = "appIdKey") String appIdKey);
+    @RequestLine("GET /weather?q={cityName}&APPID={appKeyId}")
+    WeatherInfo getWeatherInfo(@Param(value = "cityName") String cityName, @Param(value = "appKeyId") String appIdKey);
 }

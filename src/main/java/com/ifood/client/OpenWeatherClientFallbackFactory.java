@@ -24,7 +24,7 @@ public class OpenWeatherClientFallbackFactory implements FallbackFactory<OpenWea
         return new OpenWeatherClient() {
 
             @Override
-            public WeatherInfo getWeatherInfo(String cityName, String appID) {
+            public WeatherInfo getWeatherInfo(String cityName, String appKeyId) {
                 OpenWeatherClientFallbackFactory.LOGGER.info("Fallback, cause: {}", cause.getMessage());
                 WeatherInfoFallback weatherInfoFallback = new WeatherInfoFallback();
                 weatherInfoFallback.setFallbackMessage(cause.getMessage());

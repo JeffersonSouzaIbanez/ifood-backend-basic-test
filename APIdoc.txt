@@ -1,0 +1,54 @@
+::::::::::::::::::::iFood Backend Basic Test::::::::::::::::::::
+
+Access the current weather data for a specific city. 
+API construct based in outputs from https://openweathermap.org/.
+
+Note: Sign up on openweathermap (https://home.openweathermap.org/users/sign_up) and get your API key. 
+The key must be put in the application.properties file at app.key.id key.
+
+API call using city name:
+You can call using city name and the API responds with a list of results that match a searching city.
+localhost:8081/weather/{cityName}
+Example API call:
+localhost:8081/weather/London
+
+Note: The port 8081 can be configurated in the application.properties file
+
+Example of API respond (JSON):
+{
+    "currentWeather": [
+        {
+            "weatherGroup": "Rain",
+            "description": "light intensity shower rain"
+        }
+    ],
+    "weatherProperties": {
+        "temperature": 276.24,
+        "pressure": 1016,
+        "humidity": 80,
+        "minimumTemperature": 274.15,
+        "maximumTemperature": 278.15
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 2.6
+    },
+    "epochTime": 1540767000,
+    "name": "London"
+}
+
+Parameters:
+-->currentWeather
+---->weatherGroup Group of weather parameters.
+---->description Weather condition within the group
+-->weatherProperties
+---->temperature Temperature.
+---->pressure Atmospheric pressure.
+---->humidity Humidity.
+---->minimumTemperature Minimum temperature at the moment.
+---->maximumTemperature Maximum temperature at the moment.
+-->visibility Visibility, meter.
+-->wind
+---->speed Wind speed. 
+-->epochTime Time of data calculation, unix, UTC.
+-->name City name.

@@ -1,5 +1,6 @@
 package com.ifood.service.impl;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +23,14 @@ import feign.slf4j.Slf4jLogger;
  */
 @Service
 public class OpenWeatherServiceImpl implements OpenWeatherService {
+    @Value( "${app.key.id}" )
+    private String appKeyId;
 
     @Override
     @Cacheable("cityWeather")
     public WeatherInfo getWeatherByCity(String cityName) {
         OpenWeatherClient openWeatherClient = createHystrixFeign();
-        return openWeatherClient.getWeatherInfo(cityName, "56b43c17bff04ff04ce4fc381bf540fe");
+        return openWeatherClient.getWeatherInfo(cityName, appKeyId);
     }
 
     private OpenWeatherClient createHystrixFeign() {
